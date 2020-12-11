@@ -1,0 +1,28 @@
+I will be using mongoose and Mongo as my database.
+
+User
+------------------------------------
+-username UNIQUE STRING
+-name STRING
+-password UNIQUE STRING
+-photo STRING --> Want to figure out how users can upload photos
+-bio STRING
+-blogs ARRAY, references to blog records
+-favorite blogs = [] reference to blog records
+
+Blogs
+------------------------------------
+-title STRING
+-timestamp DATETIME
+-Author STRING (maybe a reference to user)*
+-comments (embedded document)
+-likes INT
+-tags [] STRING (extra feature, not sure if this will be implemented)
+
+Comments 
+------------------------------------
+-(will be embedded under Blogs)
+-content STRING
+-author STRING
+-timestamp DATETIME
+-likes INT

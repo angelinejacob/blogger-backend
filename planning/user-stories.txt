@@ -1,0 +1,12 @@
+User Stories
+1. User can make an account
+2. User can login
+3. User can view blogs written by other users
+4. User can like a blog or comment
+5. User can comment on a blog
+6. User can view individual blog (need blog show page)
+7. User can view information on other users (user show page)
+8. User can delete their own blogs
+9. User can edit their own blogs
+10. User can save an article to read for later --> stretch goal
+11. User can search for article by tags --> stretch goal.

@@ -41,9 +41,31 @@ router.post('/',(req, res) => {
     })
 })
 
-// test route
-router.get('/', (req, res) => {
-    res.send('Get a user route')
+// READ ROUTE
+router.get('/:id', (req, res) => {
+    User.findById(req.params.id, (error, foundUser) => {
+        if(error){
+            console.log("ERROR WHILE RETRIEVING USER >>> ", error)
+        }
+        else{
+            res.json(foundUser)
+        }
+    })
+    
 })
 
+// EDIT ROUTE
+router.put('/:id', (req, res) => {
+    console.log("user edit route requested...")
+    console.log(req.params.id)
+    console.log(req.body)
+    User.findByIdAndUpdate(req.params.id, req.body, { new: true },(error, updatedUser) => {
+        if(error){
+            console.log("ERROR WHILE UPDATING USER >>> ", error)
+        }
+        else {
+            res.json(updatedUser)
+        }
+    })
+})
 module.exports = router

@@ -1,8 +1,8 @@
 User Stories
-1. User can make an account
+1. User can make an account --> DONE
 2. User can login
 3. User can view blogs written by other users
-4. User can like a blog or comment
+4. User can like a blog
 5. User can comment on a blog
 6. User can view individual blog (need blog show page)
 7. User can view information on other users (user show page)

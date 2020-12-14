@@ -51,6 +51,7 @@ app.use(formData.stream())
 // union the body and the files
 app.use(formData.union())
 app.use(express.urlencoded({ extended: true }))
+app.use(express.json())
 
 // MAIN ROUTE
 app.get('/', (req, res) => {

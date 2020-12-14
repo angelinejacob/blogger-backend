@@ -5,6 +5,10 @@ const userSchema = new mongoose.Schema({
     password: String,
     name: String,
     bio: String,
+    img: {
+        data: Buffer,
+        contentType: String
+    },
     blogs: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Blog'

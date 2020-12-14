@@ -18,27 +18,27 @@ const User = require('../models/user')
 
 // CREATE ROUTE
 router.post('/',(req, res) => {
-    var obj = {
-        name: req.body.name,
-        username: req.body.username,
-        password: req.body.password,
-        bio: req.body.bio,
-        // img: {
-        //     data: req.files.img.data.path,
-        //     contentType: 'image/png'
-        // }
-    }
-    // User.create(obj, (err, item) => {
-    //     if(err){
-    //         console.log("ERROR occured while creating user >>> ", err)
-    //     } else {
-    //         console.log("Created User >>> ", item)
-    //     } 
-    // })
+    // var obj = {
+    //     name: req.body.name,
+    //     username: req.body.username,
+    //     password: req.body.password,
+    //     bio: req.body.bio,
+    //     img: req.body.img
+    //     // img: {
+    //     //     data: req.files.img.data.path,
+    //     //     contentType: 'image/png'
+    //     // }
+    // }
     console.log("BODY >>> ", req.body)
-    console.log("FILE PATH >>> ", req.files.img)
-    console.log("OBJ >>> ", obj)
     console.log('post route reached')
+    User.create(req.body, (err, item) => {
+        if(err){
+            console.log("ERROR occured while creating user >>> ", err)
+        } else {
+            console.log("Created User >>> ", item)
+            res.json(item)
+        } 
+    })
 })
 
 // test route

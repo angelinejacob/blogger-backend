@@ -63,6 +63,9 @@ app.get('/', (req, res) => {
 const userController = require('./controllers/usersController')
 app.use('/users', userController)
 
+const blogController = require('./controllers/blogsController')
+app.use('/blogs', blogController)
+
 // APP LISTEN ON PORT
 app.listen(PORT, ()=>{
     console.log(`Welcome to Blogger! Listening for requests on PORT ${PORT}...`)

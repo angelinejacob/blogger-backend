@@ -34,6 +34,25 @@ router.post('/:id', (req, res) => {
     
 })
 
+// CREATE COMMENT ROUTE
+router.post('/comment/:blogId', (req, res) => {
+    Comment.create(req.body, (error, createdComment) => {
+        if(error) console.log(error)
+        Blog.findById(req.params.blogId, (error, foundBlog) => {
+            if(error) console.log(error)
+
+            // add new comment to requested blog
+            foundBlog.comments.push(createdComment)
+
+            // save blog
+            foundBlog.save(function(error, savedBlog){
+                if(error) console.log(error)
+                res.json(savedBlog)
+            })
+        })
+    })
+})
+
 // EDIT ROUTE - handles content updates and likes
 router.put('/:userId/:blogId', (req, res) => {
     console.log("In blog edit route...")

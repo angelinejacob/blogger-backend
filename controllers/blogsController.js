@@ -34,6 +34,31 @@ router.post('/:id', (req, res) => {
     
 })
 
+// LIKE ROUTE - might just use the other edit route instead
+// router.put('/like/:userId/:blogId', (req, res) => {
+//     Blog.findById(req.params.blogId, (error, foundBlog) => {
+//         // increment the likes on found blog
+//         foundBlog.likes += 1
+
+//         // find user and add blog to favorite Blogs array
+//         User.findById(req.params.userId, (error, foundUser) => {
+//             // add blog to favorite blogs array in user
+//             foundUser.favoriteBlogs.push(foundBlog)
+
+//             // save blog
+//             foundBlog.save(function(error, savedBlog){
+//                 if(error) console.log("error while liking blog >>> ", error)
+//             })
+
+//             // save user
+//             foundUser.save(function(error, savedUser){
+//                 if(error) console.log(error)
+//                 res.json(savedUser)
+//             })
+//         })
+//     })
+// })
+
 // EDIT ROUTE - might take out userId from params later, not sure
 router.put('/:userId/:blogId', (req, res) => {
     console.log("In blog edit route...")
@@ -44,6 +69,8 @@ router.put('/:userId/:blogId', (req, res) => {
         res.json(updatedBlog)
     })
 })
+
+
 
 // SHOW ROUTE
 router.get('/:blogId', (req, res) => {

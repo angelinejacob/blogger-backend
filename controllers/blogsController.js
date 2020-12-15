@@ -34,9 +34,15 @@ router.post('/:id', (req, res) => {
     
 })
 
-// EDIT ROUTE 
+// EDIT ROUTE - might take out userId from params later, not sure
 router.put('/:userId/:blogId', (req, res) => {
     console.log("In blog edit route...")
+    console.log(req.params.blogId)
+    console.log(req.body)
+    Blog.findByIdAndUpdate(req.params.blogId, req.body, { new: true }, (error, updatedBlog) => {
+        if(error) console.log("error while editing blog >> ", error)
+        res.json(updatedBlog)
+    })
 })
 
 // SHOW ROUTE
@@ -55,6 +61,28 @@ router.get('/', (req, res) => {
     Blog.find({}, (error, foundBlogs) => {
         if(error) console.log(error)
         res.json(foundBlogs)
+    })
+})
+
+// DELETE ROUTE
+router.delete('/:userId/:blogId', (req, res) => {
+    console.log("blog delete route hit...")
+    // find the user
+    User.findById(req.params.userId, (error, foundUser) => {
+        if(error) console.log('ERROR while deleting blog >> ', error)
+
+        // find index of blog you want to remove and remove it from blogs array
+        let blogs = foundUser.blogs
+        let index = blogs.indexOf(req.params.blogId)
+        blogs.splice(index, 1)
+
+        Blog.findByIdAndRemove(req.params.blogId, (error, deletedBlog) => {
+            if(error) console.log("ERROR while deleting blog")
+        })
+        foundUser.save(function(error, savedUser){
+            if(error) console.log("ERROR while saving user after deleting blog >> ", error)
+            res.json(savedUser)
+        })
     })
 })
 

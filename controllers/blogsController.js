@@ -34,4 +34,18 @@ router.post('/:id', (req, res) => {
     
 })
 
+// EDIT ROUTE 
+router.put('/:userId/:blogId', (req, res) => {
+    console.log("In blog edit route...")
+})
+
+// INDEX ROUTE
+router.get('/', (req, res) => {
+    console.log("inside blog index route...")
+    Blog.find({}, (error, foundBlogs) => {
+        if(error) console.log(error)
+        res.json(foundBlogs)
+    })
+})
+
 module.exports = router

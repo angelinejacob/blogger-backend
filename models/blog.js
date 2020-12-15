@@ -13,7 +13,7 @@ const blogSchema = new mongoose.Schema({
         ref: 'User'
     },
     content: String,
-    likes: Number,
+    likes: {type: Number, default: 0},
     tags: String,
     comments: [commentSchema]
 

@@ -39,6 +39,16 @@ router.put('/:userId/:blogId', (req, res) => {
     console.log("In blog edit route...")
 })
 
+// SHOW ROUTE
+router.get('/:blogId', (req, res) => {
+    console.log("inside blog show route...")
+    Blog.findById(req.params.blogId, (error, foundBlog) => {
+        if(error) console.log(error)
+        res.json(foundBlog)
+    })
+})
+
+
 // INDEX ROUTE
 router.get('/', (req, res) => {
     console.log("inside blog index route...")

@@ -43,7 +43,9 @@ router.post('/',(req, res) => {
 
 // READ ROUTE
 router.get('/:id', (req, res) => {
-    User.findById(req.params.id, (error, foundUser) => {
+    User.findById(req.params.id)
+    .populate('blogs')
+    .exec((error, foundUser) => {
         if(error){
             console.log("ERROR WHILE RETRIEVING USER >>> ", error)
         }
@@ -51,6 +53,16 @@ router.get('/:id', (req, res) => {
             res.json(foundUser)
         }
     })
+    
+    
+    // User.findById(req.params.id, (error, foundUser) => {
+    //     if(error){
+    //         console.log("ERROR WHILE RETRIEVING USER >>> ", error)
+    //     }
+    //     else{
+    //         res.json(foundUser)
+    //     }
+    // })
     
 })
 

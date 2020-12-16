@@ -145,10 +145,17 @@ router.put('/:userId/:blogId', (req, res) => {
 // SHOW ROUTE
 router.get('/:blogId', (req, res) => {
     console.log("inside blog show route...")
-    Blog.findById(req.params.blogId, (error, foundBlog) => {
+
+    Blog.findById(req.params.blogId)
+    .populate('author')
+    .exec((error, foundBlog) => {
         if(error) console.log(error)
         res.json(foundBlog)
     })
+    // Blog.findById(req.params.blogId, (error, foundBlog) => {
+    //     if(error) console.log(error)
+    //     res.json(foundBlog)
+    // })
 })
 
 

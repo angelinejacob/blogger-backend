@@ -57,10 +57,12 @@ router.get('/:id', async (req, res) => {
     }
     // let savedUser = await foundUser.save()
 
+    // get all blogs in db
+    let allBlogs = await Blog.find({}).populate('author')
+
     console.log("blogs >> ", blogs)
 
-
-    res.json({ foundUser, blogs, favoriteBlogs })
+    res.json({ foundUser, blogs, favoriteBlogs, allBlogs })
         
 })
     

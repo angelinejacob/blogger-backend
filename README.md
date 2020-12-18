@@ -15,7 +15,7 @@ This app was created using the following tech stack:
 - Semantic UI
 - Axios for API calls to backend
 
-Click the links, to see the code for the Frontend and Backend.
+Click the links, to see the Github repos for the Frontend and Backend.
 
 ## Wireframes and Planning
 Before starting development, I took some time to come up with wireframes and create my data models. This really helped me going forward, because I had a goal I was aiming for. 

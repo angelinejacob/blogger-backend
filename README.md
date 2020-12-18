@@ -17,6 +17,21 @@ This app was created using the following tech stack:
 
 Click the links, to see the Github repos for the Frontend and Backend.
 
+## API Routes
+### User Routes
+1. POST host/users/ --> Create User
+2. GET host/users/:userId --> User Show Route
+3. PUT host/users/:id --> User Edit Route
+
+### Blog Routes
+4. POST host/blogs/:userId --> Create Blog
+5. POST host/blogs/comment/:blogId --> Create Comment Route
+6. PUT host/blogs/:userId/:blogId --> Update Blog Post (content & likes)
+7. GET host/blogs/:blogId --> Blog Show Route
+8. GET host/blogs/ --> Blogs Index Route (get all blogs)
+9. DELETE host/blogs/:userId/:blogId --> Delete Blog Route
+
+
 ## Wireframes and Planning
 Before starting development, I took some time to come up with wireframes and create my data models. This really helped me going forward, because I had a goal I was aiming for. 
 

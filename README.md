@@ -57,7 +57,7 @@ The final web design, did differ in some ways to the wireframes, but most of it 
 
 ## Favorite Features
 1. One of my favorite things about this project was how I was able to reuse one of my React Components (Blog Container) multiple times. I was really able to see how code modularity is very important, and if you do it right, you can reuse one component and avoid writing unecessary code. 
-
+2. Blog Search Feature - I've implemented the ability to search for posts based off of "tags". For example, a blog can have the tags "Science, Medicine" to let other users know what the article is about. Other users can then type "Science" into the search bar to get articles related to Science. I implemented this using the BlogContainer component mentioned above, every time the user strikes a key, the displayed blogs are filtered to match the entered value. These new filtered blogs are then passed into the BlogContainer component and the user can see the results on the screen.
 
 ## What I learned
 1. I learned that it's important to set realistic expectations on what you can finish 

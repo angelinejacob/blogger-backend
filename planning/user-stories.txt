@@ -1,12 +1,22 @@
+Project Idea
+-------------------
+My Blogger App will be an app for users to write blog posts and view blog posts by others. They will be able to interact with 
+other users through likes/ comments. They can even save articles to read for later. 
+
+
 User Stories
 1. User can make an account --> DONE
-2. User can login
-3. User can view blogs written by other users
-4. User can like a blog
-5. User can comment on a blog
-6. User can view individual blog (need blog show page)
-7. User can view information on other users (user show page)
-8. User can delete their own blogs
-9. User can edit their own blogs
-10. User can save an article to read for later --> stretch goal
-11. User can search for article by tags --> stretch goal.
+2. User can view blogs written by other users
+3. User can like a blog
+4. User can comment on a blog
+5. User can view individual blog (need blog show page)
+6. User can delete their own blogs
+7. User can edit their own blogs
+8. User can save an article to read for later --> stretch goal
+9. User can search for article by tags --> stretch goal.
+
+Stretch Goals:
+1. User can login, would like to implement Authentication
+2. User can view information on other users (user show page)
+3. User can reply to comments, and like comments
+4. Save preferences on the kind of articles you'd like to see when you open the app

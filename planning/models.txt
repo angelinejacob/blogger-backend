@@ -4,7 +4,7 @@ User
 ------------------------------------
 -username UNIQUE STRING
 -name STRING
--password UNIQUE STRING
+-password STRING
 -photo STRING --> Want to figure out how users can upload photos
 -bio STRING
 -blogs ARRAY, references to blog records
@@ -16,7 +16,7 @@ Blogs
 -timestamp DATETIME
 -Author STRING (maybe a reference to user)*
 -comments (embedded document)
--likes INT
+-likes INT (default 0)
 -tags [] STRING (extra feature, not sure if this will be implemented)
 
 Comments 

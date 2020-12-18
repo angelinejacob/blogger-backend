@@ -5,7 +5,7 @@ Blogger is an application where users can create blog posts and share their thou
 
 
 
-You can find Blogger deployed on [Heroku](https://blogger-frontend-angeline.herokuapp.com/).
+You can find Blogger deployed on [Heroku](https://blogger-frontend-angeline.herokuapp.com/), and you can access my backend API [here](https://blogger-backend-angeline.herokuapp.com/).
 
 ## Technology Stack
 This app was created using the following tech stack:
